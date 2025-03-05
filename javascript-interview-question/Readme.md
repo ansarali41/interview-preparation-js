@@ -1,9 +1,11 @@
 # JavaScript Interview Questions Repository
 
 ## 🎯 Purpose
+
 This repository is a comprehensive guide to JavaScript interview questions, covering fundamental to advanced concepts with practical code examples.
 
 ### 🔗 Recommended Videos
+
 1. [JavaScript Interview Questions - RoadsideCoder](https://youtu.be/oUWRxJ19gfE?si=ru6ngNM3JDX7OOUU)
 2. [JavaScript Interview Questions - Akshay Saini](https://youtu.be/pN6jk0uUrD8?si=2ZnCBGrhlJfLNEFb)
 
@@ -83,12 +85,168 @@ function incrementUnsafely() {
 }
 ```
 
+#### v. Variable Shadowing
+
+```javascript
+// Shadowing Demonstration
+// Shadowing occurs when a variable declared in an inner scope
+// has the same name as a variable in the outer scope
+
+// Shadowing with let
+let a = 10; // Outer scope variable
+function shadowWithLet() {
+    let a = 20; // Shadows the outer 'a'
+    console.log('Inside function:', a); // Output: 20
+}
+console.log('Outside function:', a); // Output: 10
+
+// Shadowing with var
+var b = 100; // Outer scope variable
+function shadowWithVar() {
+    var b = 200; // Shadows the outer 'b'
+    console.log('Inside function:', b); // Output: 200
+}
+console.log('Outside function:', b); // Output: 100
+
+// Shadowing with const
+const c = 1000; // Outer scope variable
+function shadowWithConst() {
+    const c = 2000; // Shadows the outer 'c'
+    console.log('Inside function:', c); // Output: 2000
+}
+console.log('Outside function:', c); // Output: 1000
+
+// Illegal Shadowing Example
+function illegalShadowing() {
+    var x = 10;
+    // let x = 20; // This would cause a SyntaxError
+
+    if (true) {
+        let x = 30; // This is legal for block-scoped variables
+        console.log('Block scope:', x); // Output: 30
+    }
+}
+
+// Global vs Function Scope Shadowing
+var globalVar = 100;
+function shadowGlobal() {
+    var globalVar = 200; // Shadows global variable
+    console.log('Inside function:', globalVar); // Output: 200
+}
+console.log('Global scope:', globalVar); // Output: 100
+```
+
+#### Key Shadowing Characteristics
+
+1. Inner scope variables can shadow outer scope variables
+2. `let` and `const` are block-scoped
+3. `var` is function-scoped
+4. Shadowing can occur with different declaration types
+5. Outer scope variable remains unchanged
+
+### Shadowing Nuances
+
+-   Shadowing creates a new variable in the inner scope
+-   The original variable in the outer scope is not modified
+-   Be cautious to avoid unintentional shadowing
+-   Different scoping rules apply for `var`, `let`, and `const`
+
 ### Key Takeaways
+
 1. `var`: Function-scoped, hoisted, mutable
 2. `let`: Block-scoped, not hoisted, mutable
 3. `const`: Block-scoped, not hoisted, prevents reassignment
 
-### 2. Closures and Function Concepts
+### 2. Execution Context in JavaScript
+
+#### 🧠 Understanding Execution Context
+
+Execution Context is a fundamental concept in JavaScript that defines the environment in which code is executed. It determines how variables, functions, and the `this` keyword behave during runtime.
+
+#### Types of Execution Context
+
+1. **Global Execution Context**
+2. **Function Execution Context**
+3. **Eval Execution Context**
+
+#### Execution Context Lifecycle
+
+1. **Creation Phase**
+
+    - Creates the Global/Function Object
+    - Sets up Memory Heap
+    - Initializes `this` binding
+    - Hoists variables and function declarations
+
+2. **Execution Phase**
+    - Executes code line by line
+    - Assigns values to variables
+    - Calls functions
+
+#### Code Visualization
+
+```javascript
+// Execution Context Example
+console.log(x); // undefined (hoisting)
+var x = 10;
+
+function contextDemo(a) {
+    var b = 20;
+    console.log(a, b); // Creates a new function execution context
+}
+
+contextDemo(5);
+```
+
+#### Call Stack Demonstration
+
+```javascript
+function first() {
+    second(); // Function calls create new execution contexts
+    console.log('First function');
+}
+
+function second() {
+    third();
+    console.log('Second function');
+}
+
+function third() {
+    console.log('Third function');
+}
+
+first(); // Triggers the call stack
+```
+
+#### Recommended Visualization
+
+**Recommended GIF**:
+[JavaScript Execution Context Visualization](https://cdn.hashnode.com/res/hashnode/image/upload/v1662259607252/cUIUWmldx.gif)
+
+_Note: Replace the GIF URL with an actual animated visualization of the execution context process._
+
+#### Key Takeaways
+
+-   Execution Context manages variable and function environments
+-   Call Stack tracks function execution order
+-   Understanding context helps predict code behavior
+-   Hoisting and `this` binding are crucial aspects
+
+#### Interview Tips
+
+-   Explain the difference between creation and execution phases
+-   Understand how the call stack works
+-   Know how variables are hoisted
+-   Demonstrate knowledge of `this` keyword behavior
+
+#### Common Interview Questions
+
+1. What is an Execution Context?
+2. Explain the Call Stack
+3. How does hoisting work in different execution contexts?
+4. What is the difference between Global and Function Execution Context?
+
+### 3. Closures and Function Concepts
 
 1. **Lexical Scoping**
 2. **Closure Mechanisms**
@@ -112,7 +270,7 @@ console.log(counter.increment()); // 1
 console.log(counter.increment()); // 2
 ```
 
-### 3. Asynchronous Programming
+### 5. Asynchronous Programming
 
 1. **Promises**
 2. **Async/Await**
@@ -152,7 +310,7 @@ const squared = numbers
     .reduce((a, b) => a + b, 0);
 ```
 
-### 5. Advanced JavaScript Concepts
+### 6. Advanced JavaScript Concepts
 
 1. **Prototypal Inheritance**
 2. **This Keyword**
@@ -178,6 +336,12 @@ class Dog extends Animal {
     }
 }
 ```
+
+#### Recommended Resources
+
+-   [MDN Web Docs: Execution Context](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)
+-   [JavaScript.info: Execution Context](https://javascript.info/call-stack)
+-   Video: "JavaScript Execution Context Explained" by top JS YouTubers
 
 ## 🛠 Interview Preparation Strategies
 
