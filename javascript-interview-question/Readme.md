@@ -1,17 +1,25 @@
 # JavaScript Interview Questions Repository
 
 ## 🎯 Purpose
+
 This repository is a comprehensive guide to JavaScript interview questions, covering fundamental to advanced concepts with practical code examples.
+
+### 🔗 Recommended Videos
+
+-   [JavaScript Interview Questions - RoadsideCoder](https://youtu.be/oUWRxJ19gfE?si=ru6ngNM3JDX7OOUU)
+-   [JavaScript Interview Questions - Akshay Saini](https://youtu.be/pN6jk0uUrD8?si=2ZnCBGrhlJfLNEFb)
 
 ## 📚 Topics Covered
 
 ### 1. Scope and Variable Behavior
-- **Scope Types**: Global, Function, and Block Scope
-- **Variable Declarations**: `var`, `let`, `const`
-- **Variable Hoisting**
-- **Shadowing**
+
+-   **Scope Types**: Global, Function, and Block Scope
+-   **Variable Declarations**: `var`, `let`, `const`
+-   **Variable Hoisting**
+-   **Shadowing**
 
 #### Code Example
+
 ```javascript
 // Scope and Variable Behavior
 var globalVar = 10; // Global scope
@@ -23,12 +31,14 @@ var globalVar = 10; // Global scope
 ```
 
 ### 2. Closures and Function Concepts
-- **Lexical Scoping**
-- **Closure Mechanisms**
-- **Function Currying**
-- **Higher-Order Functions**
+
+-   **Lexical Scoping**
+-   **Closure Mechanisms**
+-   **Function Currying**
+-   **Higher-Order Functions**
 
 #### Code Example
+
 ```javascript
 // Closure Example
 function createCounter() {
@@ -36,7 +46,7 @@ function createCounter() {
     return {
         increment: () => ++count,
         decrement: () => --count,
-        getCount: () => count
+        getCount: () => count,
     };
 }
 const counter = createCounter();
@@ -45,12 +55,14 @@ console.log(counter.increment()); // 2
 ```
 
 ### 3. Asynchronous Programming
-- **Promises**
-- **Async/Await**
-- **Error Handling**
-- **Event Loop**
+
+-   **Promises**
+-   **Async/Await**
+-   **Error Handling**
+-   **Event Loop**
 
 #### Code Example
+
 ```javascript
 // Async/Await with Error Handling
 async function fetchUserData(userId) {
@@ -65,12 +77,14 @@ async function fetchUserData(userId) {
 ```
 
 ### 4. Data Manipulation
-- **Array Methods**: `map()`, `filter()`, `reduce()`
-- **Object Manipulation**
-- **Spread and Rest Operators**
-- **Destructuring**
+
+-   **Array Methods**: `map()`, `filter()`, `reduce()`
+-   **Object Manipulation**
+-   **Spread and Rest Operators**
+-   **Destructuring**
 
 #### Code Example
+
 ```javascript
 // Advanced Array Manipulation
 const numbers = [1, 2, 3, 4, 5];
@@ -81,12 +95,14 @@ const squared = numbers
 ```
 
 ### 5. Advanced JavaScript Concepts
-- **Prototypal Inheritance**
-- **This Keyword**
-- **Generators**
-- **Proxy and Reflect**
+
+-   **Prototypal Inheritance**
+-   **This Keyword**
+-   **Generators**
+-   **Proxy and Reflect**
 
 #### Code Example
+
 ```javascript
 // Prototypal Inheritance
 class Animal {
@@ -106,25 +122,15 @@ class Dog extends Animal {
 ```
 
 ## 🛠 Interview Preparation Strategies
-- Understand core concepts, not just syntax
-- Practice coding challenges
-- Learn to explain your thought process
-- Focus on problem-solving approaches
+
+-   Understand core concepts, not just syntax
+-   Practice coding challenges
+-   Learn to explain your thought process
+-   Focus on problem-solving approaches
 
 ## 📝 Recommended Resources
-- MDN Web Docs
-- JavaScript.info
-- "Eloquent JavaScript" by Marijn Haverbeke
-- "You Don't Know JS" book series
 
-## 🤝 Contributing
-- Contributions are welcome!
-- Add clear, concise examples
-- Include comments explaining the concept
-- Follow existing code structure
-
-## 📞 Contact
-For questions, suggestions, or contributions, please open an issue.
-
-## 📜 License
-[Specify your license here]
+-   MDN Web Docs
+-   JavaScript.info
+-   "Eloquent JavaScript" by Marijn Haverbeke
+-   "You Don't Know JS" book series

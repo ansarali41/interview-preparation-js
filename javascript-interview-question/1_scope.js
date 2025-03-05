@@ -15,13 +15,13 @@ console.log(a, b, c); // output: 10, undefined, undefined
 //let and const are not hoisted
 
 //var is mutable
-//let and const are immutable
+//let is mutable and const is immutable
 
 //var is not thread safe
 //let and const are thread safe
 
 //var is global
-//let and const are block
+//let and const are block scoped
 
 //var is function scoped
 //let and const are block scoped
